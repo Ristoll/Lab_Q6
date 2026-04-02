@@ -27,7 +27,9 @@ jobs:
           pip install pytest
 
       - name: Run tests
-        run: pytest --junitxml=report.xml
+        run: |
+          export PYTHONPATH=$PYTHONPATH:$(pwd)/src
+          pytest --junitxml=report.xml
       
   analysis:
     runs-on: ubuntu-latest
