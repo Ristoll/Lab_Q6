@@ -58,7 +58,7 @@ jobs:
           sonar-scanner \
             -Dsonar.projectKey=Ristoll_Lab_Q6 \
             -Dsonar.sources=src/ \
-            -Dsonar.host.url=http://localhost:9000 \
+            -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.login=$SONAR_TOKEN
       - name: Запуск flake8 через Reviewdog
         uses: reviewdog/action-flake8@v2
