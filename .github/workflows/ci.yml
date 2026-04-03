@@ -67,6 +67,13 @@ jobs:
           reporter: github-pr-review
           level: info
           
+      - name: Перевірка змін у гілці develop
+        run: |
+          git checkout develop
+          git pull
+          git log --oneline --graph > develop_changes.txt
+          cat develop_changes.txt
+          
   review-check:
     name: Code Review Check for develop
     runs-on: ubuntu-latest
