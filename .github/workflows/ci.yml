@@ -69,8 +69,8 @@ jobs:
           
       - name: Перевірка змін у гілці develop
         run: |
+          git fetch origin develop
           git checkout develop
-          git pull
           git log --oneline --graph > develop_changes.txt
           cat develop_changes.txt
           
